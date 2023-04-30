@@ -1,0 +1,75 @@
+a. Método que devuelve los valores máximo, mínimo y promedio utilizando la sentencia "return":
+
+```java
+public static int[] calcularDatos(int[] arreglo) {
+    int max = arreglo[0];
+    int min = arreglo[0];
+    int suma = 0;
+
+    for (int i = 0; i < arreglo.length; i++) {
+        if (arreglo[i] > max) {
+            max = arreglo[i];
+        }
+        if (arreglo[i] < min) {
+            min = arreglo[i];
+        }
+        suma += arreglo[i];
+    }
+
+    int promedio = suma / arreglo.length;
+
+    return new int[] {max, min, promedio};
+}
+```
+
+b. Método que utiliza un parámetro para guardar los valores máximo, mínimo y promedio:
+
+```java
+public static void calcularDatos(int[] arreglo, int[] resultados) {
+    int max = arreglo[0];
+    int min = arreglo[0];
+    int suma = 0;
+
+    for (int i = 0; i < arreglo.length; i++) {
+        if (arreglo[i] > max) {
+            max = arreglo[i];
+        }
+        if (arreglo[i] < min) {
+            min = arreglo[i];
+        }
+        suma += arreglo[i];
+    }
+
+    int promedio = suma / arreglo.length;
+
+    resultados[0] = max;
+    resultados[1] = min;
+    resultados[2] = promedio;
+}
+```
+
+c. Método que no utiliza parámetros ni la sentencia "return":
+
+```java
+public static void calcularDatos(int[] arreglo) {
+    int max = arreglo[0];
+    int min = arreglo[0];
+    int suma = 0;
+
+    for (int i = 0; i < arreglo.length; i++) {
+        if (arreglo[i] > max) {
+            max = arreglo[i];
+        }
+        if (arreglo[i] < min) {
+            min = arreglo[i];
+        }
+        suma += arreglo[i];
+    }
+
+    int promedio = suma / arreglo.length;
+
+    System.out.println("Valor máximo: " + max);
+    System.out.println("Valor mínimo: " + min);
+    System.out.println("Promedio: " + promedio);
+}
+```
