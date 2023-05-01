@@ -13,8 +13,6 @@ public class main {
 		//retorna true si esta balanceado
 		
 		PilaGenerica<Character> pila = new PilaGenerica<Character>();
-		Character[] apertura = {'(','[','{'};
-		Character[] cierre = {')',']','}'};
 		
 		boolean desvalanceado = false;
 				
