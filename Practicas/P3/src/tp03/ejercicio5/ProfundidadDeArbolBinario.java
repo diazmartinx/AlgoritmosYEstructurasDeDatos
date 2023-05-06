@@ -37,7 +37,7 @@ public class ProfundidadDeArbolBinario {
 		    b.agregarHijoDerecho(d);
 		    
 		    ProfundidadDeArbolBinario arbolP = new ProfundidadDeArbolBinario(arbol);
-		    System.out.println(arbolP.sumaElementosProfundidad(2));
+		    System.out.println(arbolP.sumaElementosProfundidad(1));
 
 	}
 

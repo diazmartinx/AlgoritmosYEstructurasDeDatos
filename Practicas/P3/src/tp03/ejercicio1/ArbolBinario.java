@@ -111,6 +111,26 @@ public class ArbolBinario<T> {
     		return espejo;
     	}
 	}
+    
+    public void porNiveles() {
+		ArbolBinario<T> arbol = null;
+		ColaGenerica<ArbolBinario<T>> cola = new ColaGenerica<>();
+		cola.encolar(this);
+		cola.encolar(null);
+		while(!cola.esVacia()) {
+			arbol = cola.desencolar();
+			if (arbol!=null) {
+				System.out.print(arbol.getDato());
+				if (arbol.tieneHijoIzquierdo())
+						cola.encolar(arbol.getHijoIzquierdo());
+				if (arbol.tieneHijoDerecho())
+						cola.encolar(arbol.getHijoDerecho());
+			} else if (!cola.esVacia()) {
+				System.out.println();
+				cola.encolar(null);
+			}
+		}
+	}
 
 
 	public void entreNiveles(int n, int m){
@@ -143,5 +163,51 @@ public class ArbolBinario<T> {
 			}
 		}
 	}
+	
+	public void preOrden() {
+		if (this.esVacio()) return;
+		else {
+			System.out.print(this.getDato() + " ");
+			if (this.tieneHijoIzquierdo()) 
+				this.getHijoIzquierdo().preOrden();
 
+			if (this.tieneHijoDerecho())
+				this.getHijoDerecho().preOrden();
+		}
+			
+	}
+	
+	
+	
+	//
+	//
+	//
+	
+	
+	public void entreNiveles2(int min, int max) {
+		int nivel = 0;
+		ArbolBinario<T> arbol = null;
+		ColaGenerica<ArbolBinario<T>> cola = new ColaGenerica<ArbolBinario<T>>();
+		cola.encolar(this);
+		cola.encolar(null);
+		while (!cola.esVacia() && nivel<=max) {
+			arbol = cola.desencolar();
+			if (arbol!=null) {
+				
+				if (nivel>=min)
+					System.out.print(arbol.getDato() + " ");
+				
+				if (arbol.tieneHijoIzquierdo())
+						cola.encolar(arbol.getHijoIzquierdo());
+				if (arbol.tieneHijoDerecho())
+						cola.encolar(arbol.getHijoDerecho());
+			} else if (!cola.esVacia()) {
+				System.out.println();
+				nivel++;
+				cola.encolar(null);
+			}
+		}
+	}
 }
+
+
